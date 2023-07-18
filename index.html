@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Disney+ Hotstar Clone</title>
+  <link type="image/png" sizes="120x120" rel="icon" href="images/favicon/disney-hotstar-120.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!--  Navbar Contents -->
+  <svg style="display:none;">
+    <defs>
+      <g id="myspace">
+        <path fill="#fff"
+          d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+      </g>
+      <g id="search">
+        <path fill="#fff" d="M22.9,20.1h-1.5l-0.5-0.5c1.8-2.1,2.9-4.8,2.9-7.7C23.8,5.3,18.5,0,11.9,0S0,5.3,0,11.9s5.3,11.9,11.9,11.9
+        c3,0,5.7-1.1,7.7-2.9l0.5,0.5v1.4l9.1,9.1l2.7-2.7L22.9,20.1z M11.9,20.1c-4.5,0-8.2-3.7-8.2-8.2s3.7-8.2,8.2-8.2s8.2,3.7,8.2,8.2
+        S16.4,20.1,11.9,20.1z" />
+      </g>
+      <g id="home">
+        <path fill="#fff"
+          d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c.2 35.5-28.5 64.3-64 64.3H128.1c-35.3 0-64-28.7-64-64V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24zM352 224a64 64 0 1 0 -128 0 64 64 0 1 0 128 0zm-96 96c-44.2 0-80 35.8-80 80c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16c0-44.2-35.8-80-80-80H256z" />
+      </g>
+      <g id="tv">
+        <path fill="#fff"
+          d="M64 64V352H576V64H64zM0 64C0 28.7 28.7 0 64 0H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zM128 448H512c17.7 0 32 14.3 32 32s-14.3 32-32 32H128c-17.7 0-32-14.3-32-32s14.3-32 32-32z" />
+      </g>
+      <g id="movies">
+        <path fill="#fff"
+          d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2V384c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1V320 192 174.9l14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z" />
+      </g>
+      <g id="sports">
+        <path fill="#fff"
+          d="M511.8 267.4c-26.1 8.7-53.4 13.8-81 15.1c9.2-105.3-31.5-204.2-103.2-272.4C434.1 41.1 512 139.5 512 256c0 3.8-.1 7.6-.2 11.4zm-3.9 34.7c-5.8 32-17.6 62-34.2 88.7c-97.5 48.5-217.7 42.6-311.9-24.5c23.7-36.2 55.4-67.7 94.5-91.8c79.9 43.2 170.1 50.8 251.6 27.6zm-236-55.5c-2.5-90.9-41.1-172.7-101.9-231.7C196.8 5.2 225.8 0 256 0c2.7 0 5.3 0 7.9 .1c90.8 60.2 145.7 167.2 134.7 282.3c-43.1-2.4-86.4-14.1-126.8-35.9zM138 28.8c20.6 18.3 38.7 39.4 53.7 62.6C95.9 136.1 30.6 220.8 7.3 316.9C2.5 297.4 0 277 0 256C0 157.2 56 71.5 138 28.8zm69.6 90.5c19.5 38.6 31 81.9 32.3 127.7C162.5 294.6 110.9 368.9 90.2 451C66 430.4 45.6 405.4 30.4 377.2c6.7-108.7 71.9-209.9 177.1-257.9zM256 512c-50.7 0-98-14.7-137.8-40.2c5.6-27 14.8-53.1 27.4-77.7C232.2 454.6 338.1 468.8 433 441c-46 44-108.3 71-177 71z" />
+      </g>
+    </defs>
+  </svg>
+  <nav class="navbar navbar-expand-lg flex flex-col py-6 navigate">
+    <!-- Logo -->
+    <a href="https://www.hotstar.com/in/home?ref=%2Fin"><img src="images/disney-hotstar-96.png" alt="LOGO"
+        class="brand-logo" /></a>
+    <br />
+    <!-- Subscribe Button -->
+    <a href="https://www.hotstar.com/in/paywall">
+      <button class="btn btn-outline-dark subscribe">
+        <span>Subscribe</span>
+      </button></a>
+    <!-- Navbar Icons -->
+    <button class="navbar-toggle btn btn-success" id="navbar-toggle" type="button" onclick="display()"
+      onmouseout="hidedisplay()">
+      Navbar
+    </button>
+    <div class="contain-navbar">
+      <ul class="side-nav-links" id="side-links">
+        <li class="nav-items">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <use xlink:href="#myspace"></use>
+          </svg>
+          <a href="https://www.hotstar.com/in/mypage">
+            My Space</a>
+        </li>
+        <li class="nav-items">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <use xlink:href="#search"></use>
+          </svg>
+          <a href="https://www.hotstar.com/in/explore">
+            Search</a>
+        </li>
+        <li class="nav-items">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+            <use xlink:href="#home"></use>
+          </svg>
+          <a href="https://www.hotstar.com/in/home">
+            Home</a>
+        </li>
+        <li class="nav-items">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+            <use xlink:href="#tv"></use>
+          </svg>
+          <a href="https://www.hotstar.com/in/shows">
+            TV</a>
+        </li>
+        <li class="nav-items">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+            <use xlink:href="#movies"></use>
+          </svg>
+          <a href="https://www.hotstar.com/in/movies">
+            Movies</a>
+        </li>
+        <li class="nav-items">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <use xlink:href="#sports"></use>
+          </svg>
+          <a href="https://www.hotstar.com/in/sports">
+            Sports</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Some items on the top -->
+  <div class="some-items">
+    <ul class="image-list">
+      <li><a href="https://www.hotstar.com/in/movies/ib71/1260143875"><img src="images/IB71-Feature.jpg" alt="IB71"></a>
+      </li>
+      <li><a href="https://www.hotstar.com/in/shows/secret-invasion/1260111182"><img src="images/secret-invasion.jpg"
+            alt="Secret Invasion"></a></li>
+      <li><a href="https://www.hotstar.com/in/movies/avatar-the-way-of-water/1260142021"><img src="images/avatar.jpg"
+            alt="Avatar - The Way of Water"></a></li>
+    </ul>
+    <div class="sub-btn">
+      <a href="https://www.hotstar.com/in/paywall">
+        <button class="btn btn-outline-dark">
+          <span>Subscribe ></span>
+        </button></a>
+    </div>
+  </div>
+
+  <!-- Carousel of Movies -->
+  <div class="carousel-container">
+    <div class="carousel">
+    </div>
+  </div>
+
+  <!-- Video Containers -->
+  <div class="video-card-container">
+    <div class="video-card">
+      <img src="images/disney.PNG" class="video-card-image" alt="Disney" />
+      <video src="videos/disney.mp4" muted loop class="card-video"></video>
+    </div>
+    <div class="video-card">
+      <img src="images/pixar.PNG" class="video-card-image" alt="Pixar" />
+      <video src="videos/pixar.mp4" muted loop class="card-video"></video>
+    </div>
+    <div class="video-card">
+      <img src="images/marvel.PNG" class="video-card-image" alt="Marvel" />
+      <video src="videos/marvel.mp4" muted loop class="card-video"></video>
+    </div>
+    <div class="video-card">
+      <img src="images/star-wars.PNG" class="video-card-image" alt="Star Wars" />
+      <video src="videos/star-war.mp4" muted loop class="card-video"></video>
+    </div>
+    <div class="video-card">
+      <img src="images/geographic.PNG" class="video-card-image" alt="Geographic" />
+      <video src="videos/geographic.mp4" muted loop class="card-video"></video>
+    </div>
+  </div>
+
+  <!-- List of Recommended Shows Available -->
+  <h1 class="title">Recommended For You</h1>
+  <div class="movies-list">
+    <button class="pre-btn" title="btn">
+      <img src="images/pre.png" alt="Previous Button" />
+    </button>
+    <button class="nxt-btn" title="btn">
+      <img src="images/nxt.png" alt="Next Button" />
+    </button>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/poster 1.png" class="card-img" alt="Loki" />
+        <div class="card-body">
+          <h2 class="name">Loki</h2>
+          <h6 class="des">The mercurial villain Loki resumes his role as the God of Mischief in a new series that takes
+            place after the events of “Avengers: Endgame".</h6>
+          <a href="https://www.hotstar.com/in/shows/loki/1260063451"><button class="watchlist-btn">Watch
+              Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 2.png" class="card-img" alt="Mulan" />
+        <div class="card-body">
+          <h2 class="name">Mulan</h2>
+          <h6 class="des">Masquerading as a male soldier to protect her father and tested every step of the way, Mulan
+            must harness her inner-strength and embrace her true potential.</h6>
+          <a href="https://www.hotstar.com/in/movies/mulan/1260048586"><button class="watchlist-btn">Watch
+              Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 3.png" class="card-img" alt="The Falcon and The Winter Soldier" />
+        <div class="card-body">
+          <h2 class="name">The Falcon and The Winter Soldier</h2>
+          <h6 class="des">Following the events of “Avengers: Endgame,” Sam Wilson and Bucky Barnes team up in a global
+            adventure that tests their abilities and their patience.</h6>
+          <a href="https://www.hotstar.com/in/shows/the-falcon-and-the-winter-soldier/1260055670"><button
+              class="watchlist-btn">Watch Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 4.png" class="card-img" alt="Avengers: Endgame" />
+        <div class="card-body">
+          <h2 class="name">Avengers: Endgame</h2>
+          <h6 class="des">With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos'
+            actions and restore balance to the universe.</h6>
+          <a href="https://www.hotstar.com/in/movies/avengers-endgame/1260013556"><button class="watchlist-btn">Watch
+              Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 5.png" class="card-img" alt="Thor: Ragnarok" />
+        <div class="card-body">
+          <h2 class="name">Thor: Ragnarok</h2>
+          <h6 class="des">Deprived of his mighty hammer Mjolnir, Thor must escape the other side of the universe to save
+            his home, Asgard, from Hela, the goddess of death.</h6>
+          <a href="https://www.hotstar.com/in/movies/thor-ragnarok/1660010577"><button class="watchlist-btn">Watch
+              Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 7.png" class="card-img" alt="Pirates of The Caribbean: Salazar's Revenge" />
+        <div class="card-body">
+          <h2 class="name">Pirates of The Caribbean: Salazar's Revenge</h2>
+          <h6 class="des">Captain Jack Sparrow senses the winds of ill-fortune when his nemesis Captain Salazar escapes
+            from the Devil's Triangle, to kill every pirate at sea including him.</h6>
+          <a href="https://www.hotstar.com/in/movies/pirates-of-the-caribbean-salazars-revenge/1260018339"><button
+              class="watchlist-btn">Watch Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 8.png" class="card-img" alt="Soul" />
+        <div class="card-body">
+          <h2 class="name">Soul</h2>
+          <h6 class="des">
+            After a small misstep, Joe is transported to The Great Before and must find his way back with the help of an
+            infant soul learning about herself.</h6>
+          <a href="https://www.hotstar.com/in/movies/soul/1260049853"><button class="watchlist-btn">Watch
+              Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 9.png" class="card-img" alt="Raya and the Last Dragon" />
+        <div class="card-body">
+          <h2 class="name">Raya and the Last Dragon</h2>
+          <h6 class="des">Raya, a fallen princess, must track down the legendary last dragon to stop the evil forces
+            that have returned and threaten her world.</h6>
+          <a href="https://www.hotstar.com/in/movies/raya-and-the-last-dragon/1260062999"><button
+              class="watchlist-btn">Watch Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 10.png" class="card-img" alt="Luca" />
+        <div class="card-body">
+          <h2 class="name">Luca</h2>
+          <h6 class="des">The movie is a coming-of-age story about one young boy experiencing an unforgettable summer
+            filled with gelato, pasta and endless scooter rides.</h6>
+          <a href="https://www.hotstar.com/in/movies/luca/1260063730"><button class="watchlist-btn">Watch
+              Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 11.png" class="card-img" alt="Ford vs Ferrari" />
+        <div class="card-body">
+          <h2 class="name">Ford vs Ferrari</h2>
+          <h6 class="des">Caroll Shelby and Ken Miles battle against all the odds to build a race car for Ford Motor
+            Company and take on the dominant Ferraris at the Le Mans in 1966.</h6>
+          <a href="https://www.hotstar.com/in/movies/ford-v-ferrari/1260029222"><button class="watchlist-btn">Watch
+              Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 12.png" class="card-img" alt="X Men: Dark Phoenix" />
+        <div class="card-body">
+          <h2 class="name">X Men: Dark Phoenix</h2>
+          <h6 class="des">After a rescue mission in space, Jean Grey behaves unstably. The X-Men must find a way to save
+            her soul and our very planet from this menancing force.</h6>
+          <a href="https://www.hotstar.com/in/movies/x-men-dark-phoenix/1260017860"><button class="watchlist-btn">Watch
+              Now</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- List of Popular Shows Available -->
+  <h1 class="title">Popular Shows</h1>
+  <div class="movies-list">
+    <button class="pre-btn" title="btn">
+      <img src="images/pre.png" alt="Previous Button" />
+    </button>
+    <button class="nxt-btn" title="btn">
+      <img src="images/nxt.png" alt="Next Button" />
+    </button>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/poster 12.png" class="card-img" alt="X Men: Dark Phoenix" />
+        <div class="card-body">
+          <h2 class="name">X Men: Dark Phoenix</h2>
+          <h6 class="des">After a rescue mission in space, Jean Grey behaves unstably. The X-Men must find a way to save
+            her soul and our very planet from this menancing force.</h6>
+          <a href="https://www.hotstar.com/in/movies/x-men-dark-phoenix/1260017860"><button class="watchlist-btn">Watch
+              Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 11.png" class="card-img" alt="Ford vs Ferrari" />
+        <div class="card-body">
+          <h2 class="name">Ford vs Ferrari</h2>
+          <h6 class="des">Caroll Shelby and Ken Miles battle against all the odds to build a race car for Ford Motor
+            Company and take on the dominant Ferraris at the Le Mans in 1966.</h6>
+          <a href="https://www.hotstar.com/in/movies/ford-v-ferrari/1260029222"><button class="watchlist-btn">Watch
+              Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 10.png" class="card-img" alt="Luca" />
+        <div class="card-body">
+          <h2 class="name">Luca</h2>
+          <h6 class="des">The movie is a coming-of-age story about one young boy experiencing an unforgettable summer
+            filled with gelato, pasta and endless scooter rides.</h6>
+          <a href="https://www.hotstar.com/in/movies/luca/1260063730"><button class="watchlist-btn">Watch
+              Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 9.png" class="card-img" alt="Raya and the Last Dragon" />
+        <div class="card-body">
+          <h2 class="name">Raya and the Last Dragon</h2>
+          <h6 class="des">Raya, a fallen princess, must track down the legendary last dragon to stop the evil forces
+            that have returned and threaten her world.</h6>
+          <a href="https://www.hotstar.com/in/movies/raya-and-the-last-dragon/1260062999"><button
+              class="watchlist-btn">Watch Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 8.png" class="card-img" alt="Soul" />
+        <div class="card-body">
+          <h2 class="name">Soul</h2>
+          <h6 class="des">
+            After a small misstep, Joe is transported to The Great Before and must find his way back with the help of an
+            infant soul learning about herself.</h6>
+          <a href="https://www.hotstar.com/in/movies/soul/1260049853"><button class="watchlist-btn">Watch
+              Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 7.png" class="card-img" alt="Pirates of The Caribbean: Salazar's Revenge" />
+        <div class="card-body">
+          <h2 class="name">Pirates of The Caribbean: Salazar's Revenge</h2>
+          <h6 class="des">Captain Jack Sparrow senses the winds of ill-fortune when his nemesis Captain Salazar escapes
+            from the Devil's Triangle, to kill every pirate at sea including him.</h6>
+          <a href="https://www.hotstar.com/in/movies/pirates-of-the-caribbean-salazars-revenge/1260018339"><button
+              class="watchlist-btn">Watch Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 6.png" class="card-img" alt="The Avengers" />
+        <div class="card-body">
+          <h2 class="name">The Avengers</h2>
+          <h6 class="des">Nick Fury finds himself in need of a team to pull the world back from the brink of disaster by
+            launching the Avengers initiative.</h6>
+          <a href="https://www.hotstar.com/in/movies/marvels-the-avengers/1660000015?filters=content_type%3Dmovie"><button
+              class="watchlist-btn">Watch Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 5.png" class="card-img" alt="Thor: Ragnarok" />
+        <div class="card-body">
+          <h4 class="name">Thor: Ragnarok</h4>
+          <h6 class="des">Deprived of his mighty hammer Mjolnir, Thor must escape the other side of the universe to save
+            his home, Asgard, from Hela, the goddess of death.</h6>
+          <a href="https://www.hotstar.com/in/movies/thor-ragnarok/1660010577"><button class="watchlist-btn">Watch
+              Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 4.png" class="card-img" alt="Avengers: Endgame" />
+        <div class="card-body">
+          <h2 class="name">Avengers: Endgame</h2>
+          <h6 class="des">With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos'
+            actions and restore balance to the universe.</h6>
+          <a href="https://www.hotstar.com/in/movies/avengers-endgame/1260013556"><button class="watchlist-btn">Watch
+              Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 3.png" class="card-img" alt="The Falcon and The Winter Soldier" />
+        <div class="card-body">
+          <h2 class="name">The Falcon and The Winter Soldier</h2>
+          <h6 class="des">Following the events of “Avengers: Endgame,” Sam Wilson and Bucky Barnes team up in a global
+            adventure that tests their abilities and their patience.</h6>
+          <a href="https://www.hotstar.com/in/shows/the-falcon-and-the-winter-soldier/1260055670"><button
+              class="watchlist-btn">Watch Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 2.png" class="card-img" alt="Mulan" />
+        <div class="card-body">
+          <h2 class="name">Mulan</h2>
+          <h6 class="des">Masquerading as a male soldier to protect her father and tested every step of the way, Mulan
+            must harness her inner-strength and embrace her true potential.</h6>
+          <a href="https://www.hotstar.com/in/movies/mulan/1260048586"><button class="watchlist-btn">Watch
+              Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/poster 1.png" class="card-img" alt="Loki" />
+        <div class="card-body">
+          <h2 class="name">Loki</h2>
+          <h6 class="des">The mercurial villain Loki resumes his role as the God of Mischief in a new series that takes
+            place after the events of “Avengers: Endgame".</h6>
+          <a href="https://www.hotstar.com/in/shows/loki/1260063451"><button class="watchlist-btn">Watch
+              Now</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="container-fluid">
+    <footer class="py-2 mx-3">
+      <div class="row row-footer">
+        <div class="bottom col-7 col-md-4 mb-1">
+          <h6>Company</h6>
+          <ul class="list-unstyled">
+            <li><a href="https://www.hotstar.com/about-us/in">About Us</li>
+            <li><a href="https://careers.hotstar.com/">Careers</a></li>
+          </ul>
+        </div>
+        <div class="bottom col-7 col-md-4 mb-1">
+          <h6>View Website in</h6>
+          <ul class="list-unstyled">
+            <li>English</li>
+          </ul>
+        </div>
+        <div class="bottom col-7 col-md-4 mb-1">
+          <h6>Need Help?</h6>
+          <ul class="list-unstyled">
+            <li><a href="https://help.hotstar.com/in/en/support/home">Visit Help Center</a></li>
+            <li><a href="https://help.hotstar.com/in/en/support/tickets/feedback">Share Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"
+        style="color: white; opacity: 0.9;">
+        <p>© Disney+ Hotstar Clone, 2023 by Ithiraj Hazarika™</p>
+        <ul class="list-unstyled d-flex">
+          <h6>Connect with Us via:</h6>
+          <li class="ms-3">
+            <a class="line-dark" href="https://www.facebook.com/DisneyPlusHotstar">
+              <svg class="bi" width="24" height="24" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path
+                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
+                </path>
+              </svg>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="line-dark" href="https://www.instagram.com/disneyplushotstar/">
+              <svg class="bi" width="24" height="24" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+                </path>
+              </svg>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="line-dark" href="https://twitter.com/i/flow/login?redirect_after_login=%2FDisneyPlusHS">
+              <svg class="bi" width="24" height="24" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path
+                  d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
+                </path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+
+</body>
+
+</html>
