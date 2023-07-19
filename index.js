@@ -1,47 +1,38 @@
-function display(){ 
-  document.getElementById("side-links").style.display = "inline-block";
-}
-
-function hidedisplay(){
-  document.getElementById("side-links").style.display = "none";
-}
-
-
-
 let movies = [
   {
     name: "Falcon and The Winter Soldier",
-    des:
-      "Following the events of “Avengers: Endgame,” Sam Wilson and Bucky Barnes team up in a global adventure that tests their abilities and their patience.",
-    image: "images/slider 2.PNG"
+    des: "Following the events of “Avengers: Endgame,” Sam Wilson and Bucky Barnes team up in a global adventure that tests their abilities and their patience.",
+    image: "images/slider 2.PNG",
+    url: "https://www.hotstar.com/in/movies/luca/1260063730",
   },
   {
     name: "Loki",
-    des:
-      "The mercurial villain Loki resumes his role as the God of Mischief in a new series that takes place after the events of “Avengers: Endgame.",
-    image: "images/slider 1.PNG"
+    des: "The mercurial villain Loki resumes his role as the God of Mischief in a new series that takes place after the events of “Avengers: Endgame.",
+    image: "images/slider 1.PNG",
+    url: "https://www.hotstar.com/in/shows/the-falcon-and-the-winter-soldier/1260055670",
   },
   {
     name: "Wanda Vision",
-    des:
-      "Wanda Maximoff and Vision—two super-powered beings living idealized suburban lives—begin to suspect that everything is not as it seems.",
-    image: "images/slider 3.PNG"
+    des: "Wanda Maximoff and Vision—two super-powered beings living idealized suburban lives—begin to suspect that everything is not as it seems.",
+    image: "images/slider 3.PNG",
+    url: "https://www.hotstar.com/in/shows/loki/1260063451",
   },
   {
     name: "Raya and The Last Dragon",
-    des:
-      "Raya, a fallen princess, must track down the legendary last dragon to stop the evil forces that have returned and threaten her world.",
-    image: "images/slider 4.PNG"
+    des: "Raya, a fallen princess, must track down the legendary last dragon to stop the evil forces that have returned and threaten her world.",
+    image: "images/slider 4.PNG",
+    url: "https://www.hotstar.com/in/shows/wandavision/1260051344",
   },
   {
     name: "Luca",
-    des:
-      "The movie is a coming-of-age story about one young boy experiencing an unforgettable summer filled with gelato, pasta and endless scooter rides.",
-    image: "images/slider 5.PNG"
-  }
+    des: "The movie is a coming-of-age story about one young boy experiencing an unforgettable summer filled with gelato, pasta and endless scooter rides.",
+    image: "images/slider 5.PNG",
+    url: "https://www.hotstar.com/in/movies/raya-and-the-last-dragon/1260062999",
+  },
 ];
 
 const carousel = document.querySelector(".carousel");
+const movies_link = document.querySelector(".link");
 let sliders = [];
 
 let slideIndex = 0; // to track the current slide
@@ -70,6 +61,9 @@ const createSlide = () => {
 
   //Setting up images for Carousel
   imgElement.src = movies[slideIndex].image;
+  //Setting url for the carousel
+  movies_link.href = movies[slideIndex].url;
+
   slideIndex++;
 
   //Setting elements class names for the Carousel
@@ -93,8 +87,7 @@ for (let i = 0; i < 3; i++) {
 
 setInterval(() => {
   createSlide();
-}, 3000);
-
+}, 5000);
 
 //Creating Video Cards
 const videoCards = [...document.querySelectorAll(".video-card")];
