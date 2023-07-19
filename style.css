@@ -569,7 +569,7 @@ body {
   }
 }
 
-@media screen and (max-width: 425px) and (max-height: 1080px) {
+@media screen and (max-width: 720px) and (max-height: 1600px) {
   body {
     padding-top: 85px;
     padding-left: 0;
