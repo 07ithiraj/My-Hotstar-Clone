@@ -581,7 +581,7 @@ body {
     display: none;
   }
   .some-items {
-    width: 100%;
+    width: 100vw;
     height: 130px;
   }
   .sub-btn button {
@@ -591,14 +591,14 @@ body {
     margin-left: -100px;
   }
   .image-list {
-    margin: 0 2px;
+    margin-left: 5px;
     padding-top: 5px;
   }
   .image-list li {
     margin-right: 0px;
   }
   .image-list li img {
-    width: 125px;
+    width: 135px;
     height: 85px;
   }
   .navigate {
