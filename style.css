@@ -581,25 +581,7 @@ body {
     display: none;
   }
   .some-items {
-    width: 100vw;
-    height: 130px;
-  }
-  .sub-btn button {
-    width: 100px;
-    font-size: 12px;
-    margin-top: -60px;
-    margin-left: -100px;
-  }
-  .image-list {
-    margin-left: 5px;
-    padding-top: 5px;
-  }
-  .image-list li {
-    margin-right: 0px;
-  }
-  .image-list li img {
-    width: 135px;
-    height: 85px;
+    display: none;
   }
   .navigate {
     display: none;
