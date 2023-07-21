@@ -680,6 +680,7 @@ body {
     width: 20px;
     height: 20px;
     position: absolute;
+    margin-top: 3.5px;
     left: 25px;
     transition: all 0.5s ease-in-out;
     z-index: 2;
