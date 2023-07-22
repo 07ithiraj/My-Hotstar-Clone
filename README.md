@@ -1,5 +1,5 @@
 # Disney+ Hotstar Clone
-Tried to clone the homepage of Disney+ Hotstar. I hava made changes to the UI of the website as per my point of view. Moreover, I also tried to enhance the UX of the website's loading page as per my choice. 
+Tried to clone the homepage of Disney+ Hotstar. I hava made changes to the UI of the website as per my point of view. Moreover, I also tried to enhance the UX of the website's main page as per my choice. 
 # Technologies used
 HTML
 
