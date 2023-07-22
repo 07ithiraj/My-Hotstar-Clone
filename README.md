@@ -8,7 +8,7 @@ CSS
 JavaScript
 
 Bootstrap CSS
-# My clone website's first look:
+# My clone website's first look: (laptop and desktop screens)
 ### Main Contents 
 ![2](https://github.com/ithiraj-hazarika-07/Hotstar-Clone/assets/111444971/5d465354-ed09-45d1-b9be-9657e43e9c04)
 ### Navigation Bar 
